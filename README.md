@@ -10,7 +10,7 @@
 
 ### How to setup
 
-Create a `config/hosts.json` file at the root of the project
+Create a `config/hosts.json` file at the root of the project<br>
 Add your own hosts. The file should look like this :
 ```json
 {
