@@ -1,0 +1,15 @@
+{
+  "name": "bouncer",
+  "version": "1.0.0",
+  "description": "Main portal to the web",
+  "main": "bouncer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emrio <emrio@emrio.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "bouncy": "^3.2.2",
+    "express": "^4.16.3"
+  }
+}
