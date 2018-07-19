@@ -1,3 +1,8 @@
 # macOS system file
 .DS_Store
+
+# Config folder
 config/
+
+# Environment file
+.env
