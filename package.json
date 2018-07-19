@@ -4,7 +4,7 @@
   "description": "Main portal to the web",
   "main": "bouncer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon bouncer.js"
   },
   "author": "Emrio <emrio@emrio.fr>",
   "license": "MIT",
