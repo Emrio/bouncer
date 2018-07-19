@@ -24,7 +24,7 @@ And now, your requests to the server should be redirected to these ports
 
 ### Environment
 
-They are 3 environment variables :
+There are 3 environment variables :
 - `HTTP_PORT`: The main HTTP port (default: 80)
 - `HTTPS_PORT`: The main HTTPS port (default: 443)
 - `ALLOW_HTTPS`: If set to true, your server will also support HTTPS
