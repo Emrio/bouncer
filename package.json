@@ -10,7 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "bouncy": "^3.2.2",
-    "dotenv": "^6.0.0",
     "express": "^4.16.3"
+  },
+  "devDependicies": {
+    "dotenv": "^6.0.0"
   }
 }
