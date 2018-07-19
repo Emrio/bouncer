@@ -12,7 +12,7 @@ const ports = {
   https: process.env.HTTPS_PORT || 443
 }
 
-const hosts = fs.readFileSync(path.join(__dirname, 'config', 'hosts.json'))
+const hosts = JSON.parse(fs.readFileSync(path.join(__dirname, 'config', 'hosts.json')))
 
 
 if(process.env.ALLOW_HTTPS === 'true') {
@@ -32,7 +32,7 @@ if(process.env.ALLOW_HTTPS === 'true') {
     key: fs.readFileSync(path.join(__dirname, 'config', 'ssl', 'server.key'))
   }
   var bouncer = bouncy(httpsOptions, (req, res, bounce) => {
-    console.log(req.headers.host)
+    console.log("Request from: " + req.headers.host)
 
     if(hosts.hasOwnProperty(req.headers.host)) {
       var port2bounce = hosts[req.headers.host]
@@ -54,7 +54,7 @@ if(process.env.ALLOW_HTTPS === 'true') {
 else {
 
   var bouncer = bouncy((req, res, bounce) => {
-    console.log(req.headers.host)
+    console.log("Request from: " + req.headers.host)
 
     if(hosts.hasOwnProperty(req.headers.host)) {
       var port2bounce = hosts[req.headers.host]
