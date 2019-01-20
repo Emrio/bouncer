@@ -12,6 +12,7 @@
 
 ```shell
 $ git clone https://github.com/TheEmrio/bouncer.git
+$ cd bouncer
 $ npm run install
 ```
 
