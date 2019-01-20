@@ -13,7 +13,7 @@
 ```shell
 $ git clone https://github.com/TheEmrio/bouncer.git
 $ cd bouncer
-$ npm run install
+$ npm install
 ```
 
 After configuration is done, do:
