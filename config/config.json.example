@@ -6,7 +6,7 @@
   },
   "http": {
     "port": 80
-  }
+  },
   "hosts": {
     "host.com": 1234,
 
