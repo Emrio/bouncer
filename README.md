@@ -60,7 +60,7 @@ For each host, you can supply an Object instead of a number for deeper configura
 ```
 
 - `port`: The port where the request will be bounced to. This property is **mandatory**
-- `allowHttps`: Tells the bouncer if HTTPS requests for this domain can be bounced. This property only applies when HTTPS is configured. Default is `true`
+- `allowHttps`: Tells the bouncer if HTTPS requests for this domain can be bounced. This property only applies when HTTPS is configured. Default is `false`
 - `forceHttps`: Tells the bouncer if the HTTP request should be redirected to HTTPS requests. This property only applies when HTTPS is configured. Default is `false`
 - `default`: If a request doesn't match with any host, bounce the request to the last host with this property set to true. If no host is set as default, the bouncer will reply with `404: Unknown host`. Default is `false`
 
