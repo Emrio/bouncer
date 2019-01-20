@@ -1,0 +1,32 @@
+{
+  "https": {
+    "cert": "/path/to/cert",
+    "key": "/path/to/key",
+    "port": 443
+  },
+  "http": {
+    "port": 80
+  }
+  "hosts": {
+    "host.com": 1234,
+
+    "host.com": {
+      "port": 1234
+    },
+
+    "host.com": {
+      "port": 1234,
+      "forceHttps": true
+    },
+
+    "host.com": {
+      "port": 1234,
+      "replaceHostWith": "www.host.com"
+    },
+
+    "host.com": {
+      "port": 1234,
+      "default": true
+    }
+  }
+}

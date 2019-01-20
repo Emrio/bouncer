@@ -1,8 +1,5 @@
 # macOS system file
 .DS_Store
 
-# Config folder
-config/
-
-# Environment file
-.env
+# node modules
+node_modules
