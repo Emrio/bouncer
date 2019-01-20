@@ -4,8 +4,7 @@
   "description": "Main portal to the web",
   "main": "bouncer.js",
   "scripts": {
-    "start": "node index.js",
-    "install": "npm i"
+    "start": "node index.js"
   },
   "author": "Emrio <emrio@emrio.fr>",
   "license": "MIT",
