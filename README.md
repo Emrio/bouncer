@@ -8,7 +8,20 @@
 - [Express](https://github.com/expressjs/express)
 - [Lodash](https://github.com/lodash/lodash)
 
-## How to setup
+## Installation
+
+```shell
+$ git clone https://github.com/TheEmrio/bouncer.git
+$ npm run install
+```
+
+After configuration is done, do:
+
+```shell
+$ npm start
+```
+
+## How to configure
 
 A configuration setup is available at `config/config.json.example`
 
