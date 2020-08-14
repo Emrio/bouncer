@@ -2,17 +2,21 @@
 
 > A HTTP node.js server which distributes HTTP(S) requests to the different sub-hosts
 
-### Dependencies
+## Table of content
+1. [Installation](#installation)
+2. [How to configure](#configuration)
+  1. [Hosts](#configuration-hosts)
+  2. [HTTP and HTTPS](#configuration-http-https)
+    1. [HTTP](#configuration-http)
+    2. [HTTPS](#configuration-https)
+  3. [404 Handler](#configuration-fof)
 
-- [Bouncy](https://github.com/substack/bouncy)
-- [Express](https://github.com/expressjs/express)
-- [Lodash](https://github.com/lodash/lodash)
-
+<a name="installation"></a>
 ## Installation
 
 ```shell
 $ git clone https://github.com/TheEmrio/bouncer.git
-$ cd bouncer
+$ cd bouncer/
 $ npm install
 ```
 
@@ -22,17 +26,26 @@ After configuration is done, do:
 $ npm start
 ```
 
+You may also want to set the following environment variables as such:
+```
+DEBUG=bouncer:*
+EMRIOUTILS_LOG_PREFIX=bouncer
+EMRIOUTILS_LOG_PATH=/path/to/logs/dir/
+```
+
+<a name="configuration"></a>
 ## How to configure
 
 A configuration setup is available at `config/config.json.example`
 
+<a name="configuration-hosts"></a>
 ### Hosts
 
-Create a new `.json` file under `config/`. This will contain our bouncer configuration
+Create a new `config.json` file under `config/`. This will contain our bouncer configuration
 
-You can create multiple configuration files, all of them will be merged.
+**NOTE:** On prior versions, you could create multiple `.json` configuration files and all of them would be merged. As of version 3.0.0, only the file `config/config.json` will be loaded!
 
-**Note:** Using multiple configuration files exposes you to some configuration being overridden during execution and therefore not being used!
+**NOTE:** Using multiple configuration files exposes you to some configuration being overridden during execution and therefore not being used!
 
 The most basic configuration file looks like this :
 ```json
@@ -43,9 +56,9 @@ The most basic configuration file looks like this :
 }
 ```
 
-With this configuration, the bouncer will bounce all HTTP requests to the port `8080`
+With this configuration, the bouncer will bounce all HTTP requests for `example.com` to the port `8080`
 
-For each host, you can supply an Object instead of a number for deeper configuration:
+For each host, you can supply an object instead of a number for deeper configuration:
 ```json
 {
   "hosts": {
@@ -61,8 +74,8 @@ For each host, you can supply an Object instead of a number for deeper configura
 
 - `port`: The port where the request will be bounced to. This property is **mandatory**
 - `allowHttps`: Tells the bouncer if HTTPS requests for this domain can be bounced. This property only applies when HTTPS is configured. Default is `false`
-- `forceHttps`: Tells the bouncer if the HTTP request should be redirected to HTTPS requests. This property only applies when HTTPS is configured. Default is `false`
-- `default`: If a request doesn't match with any host, bounce the request to the last host with this property set to true. If no host is set as default, the bouncer will reply with `404: Unknown host`. Default is `false`
+- `forceHttps`: Tells the bouncer if the HTTP request should be redirected to HTTPS requests. This property only applies when HTTPS is configured. Defaults to `false`
+- `default`: If a request doesn't match with any host, bounce the request to the last host with this property set to true. If no host is set as default, the bouncer will reply with a 404 response. Default is `false`
 
 You can add multiple hosts like so:
 ```json
@@ -82,12 +95,14 @@ You can add multiple hosts like so:
 }
 ```
 
-**Note:** Multiple hosts can point to the same port. This is useful for servers with subdomains. For each subdomain, you must setup a different host. Wildcards are not supported
+**Note:** Multiple hosts can point to the same port. This is useful for servers with subdomains. For each subdomain, you must setup a different host. Wildcards are not supported.
 
+<a name="configuration-http-https"></a>
 ### HTTP and HTTPS
 
-You can setup how HTTP and HTTPS works for the boucer.
+You can setup how HTTP and HTTPS works for the bouncer.
 
+<a name="configuration-http"></a>
 #### HTTP
 
 You can set the port of the HTTP server
@@ -118,8 +133,9 @@ You can also disable the HTTP server if you only accept HTTPS.
 }
 ```
 
-**Note:** This is not recommended. You should allow HTTP request and set `forceHttps` to true for all hosts if you only want to deal with HTTPS requests in the server
+**NOTE:** This is not recommended. If you want to secure your connections, you should rather allow HTTP request and set `forceHttps` to `true` for all hosts.
 
+<a name="configuration-https"></a>
 #### HTTPS
 
 By default, the bouncer will only listen to HTTP requests but you can also setup HTTPS redirection:
@@ -137,3 +153,39 @@ By default, the bouncer will only listen to HTTP requests but you can also setup
 - `cert` is a path to a valid SSL certification file. This property is **mandatory**
 - `key` is a path to a valid SSL private key file. This property is **mandatory**
 - `port` is the port the HTTPS server will be listening to. By default, it is `443`
+
+<a name="configuration-fof"></a>
+### 404 Handler
+
+You can setup a custom 404 response if you don't setup a default host.
+
+You can send text
+```json
+{
+  "fof": {
+    "type": "text/plain",
+    "content": "Oh no, something went wrong here!"
+  }
+}
+```
+
+or send a file
+
+```json
+{
+  "fof": {
+    "type": "text/html",
+    "file": "/path/to/some/file.html"
+  }
+}
+```
+
+- `type` is the content type to send to the client. Defaults to `text/plain`
+
+One of the following property should be set:
+- `content` is a plain string of text
+- `file` is a path to a file on the server
+
+By default, the bouncer will send the text `404: Unknown host`.
+
+**NOTE:** If you want a more powerful 404 handler, you should setup a default host.
