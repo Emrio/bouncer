@@ -43,7 +43,7 @@ A configuration setup is available at `config/config.json.example`
 
 Create a new `config.json` file under `config/`. This will contain our bouncer configuration
 
-**NOTE:** On prior versions, you could create multiple `.json` configuration files and all of them would be merged. As of version 3.0.0, only the file `config/config.json` will be loaded!
+**NOTE:** On prior versions, you could create multiple `.json` configuration files and all of them would be merged. As of version 2.1.0, only the file `config/config.json` will be loaded!
 
 **NOTE:** Using multiple configuration files exposes you to some configuration being overridden during execution and therefore not being used!
 
