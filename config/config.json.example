@@ -21,7 +21,8 @@
 
     "host.com": {
       "port": 1234,
-      "replaceHostWith": "www.host.com"
+      "replaceHostWith": "www.host.com",
+      "allowHttps": true
     },
 
     "host.com": {
@@ -30,7 +31,7 @@
     }
   },
   "fof": {
-    "type": "text",
+    "type": "text/plain",
     "content": "404: Host not found"
   }
 }
