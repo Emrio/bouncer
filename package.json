@@ -1,6 +1,6 @@
 {
   "name": "bouncer",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Bounce HTTP(S) requests to sub-hosts",
   "main": "index.js",
   "scripts": {
