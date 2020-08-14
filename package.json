@@ -1,7 +1,7 @@
 {
   "name": "bouncer",
   "version": "2.0.1",
-  "description": "Main portal to the web",
+  "description": "Bounce HTTP(S) requests to sub-hosts",
   "main": "bouncer.js",
   "scripts": {
     "start": "node index.js"
@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "bouncy": "^3.2.2",
-    "express": "^4.16.3",
-    "lodash": "^4.17.15"
+    "emrioutils": "^3.1.11"
   }
 }
