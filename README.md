@@ -5,10 +5,10 @@
 ## Table of content
 1. [Installation](#installation)
 2. [How to configure](#configuration)
-  1. [Hosts](#configuration-hosts)
-  2. [HTTP](#configuration-http)
-  3. [HTTPS](#configuration-https)
-  4. [404 Handler](#configuration-fof)
+   1. [Hosts](#configuration-hosts)
+   2. [HTTP](#configuration-http)
+   3. [HTTPS](#configuration-https)
+   4. [404 Handler](#configuration-fof)
 
 <a name="installation"></a>
 ## Installation
