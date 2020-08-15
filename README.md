@@ -3,12 +3,12 @@
 > A HTTP node.js server which distributes HTTP(S) requests to the different sub-hosts
 
 ## Table of content
-1. [Installation](#installation)
-2. [How to configure](#configuration)
-  2.1. [Hosts](#configuration-hosts)
-  2.2. [HTTP](#configuration-http)
-  2.3. [HTTPS](#configuration-https)
-  2.4. [404 Handler](#configuration-fof)
+- [Installation](#installation)
+- [How to configure](#configuration)
+  - [Hosts](#configuration-hosts)
+  - [HTTP](#configuration-http)
+  - [HTTPS](#configuration-https)
+  - [404 Handler](#configuration-fof)
 
 <a name="installation"></a>
 ## Installation
