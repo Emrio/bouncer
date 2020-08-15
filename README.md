@@ -6,10 +6,9 @@
 1. [Installation](#installation)
 2. [How to configure](#configuration)
   1. [Hosts](#configuration-hosts)
-  2. [HTTP and HTTPS](#configuration-http-https)
-    1. [HTTP](#configuration-http)
-    2. [HTTPS](#configuration-https)
-  3. [404 Handler](#configuration-fof)
+  2. [HTTP](#configuration-http)
+  3. [HTTPS](#configuration-https)
+  4. [404 Handler](#configuration-fof)
 
 <a name="installation"></a>
 ## Installation
@@ -97,13 +96,8 @@ You can add multiple hosts like so:
 
 **Note:** Multiple hosts can point to the same port. This is useful for servers with subdomains. For each subdomain, you must setup a different host. Wildcards are not supported.
 
-<a name="configuration-http-https"></a>
-### HTTP and HTTPS
-
-You can setup how HTTP and HTTPS works for the bouncer.
-
 <a name="configuration-http"></a>
-#### HTTP
+### HTTP
 
 You can set the port of the HTTP server
 
@@ -136,7 +130,7 @@ You can also disable the HTTP server if you only accept HTTPS.
 **NOTE:** This is not recommended. If you want to secure your connections, you should rather allow HTTP request and set `forceHttps` to `true` for all hosts.
 
 <a name="configuration-https"></a>
-#### HTTPS
+### HTTPS
 
 By default, the bouncer will only listen to HTTP requests but you can also setup HTTPS redirection:
 
