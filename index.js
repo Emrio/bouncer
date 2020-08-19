@@ -5,3 +5,9 @@ bouncer().catch(err => {
   console.error(err)
   process.exit(1)
 })
+
+process.on('uncaughtException', (err, origin) => {
+  console.error('Fatal uncaught exception:', origin)
+  console.error(err)
+  process.exit(1)
+})
