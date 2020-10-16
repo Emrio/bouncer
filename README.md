@@ -1,6 +1,6 @@
 # Bouncer
 
-> A HTTP node.js server which distributes HTTP(S) requests to the different sub-hosts
+> A HTTP node.js server which distributes HTTP(S) requests to different sub-hosts
 
 ## Table of content
 - [Installation](#installation)
@@ -73,8 +73,8 @@ For each host, you can supply an object instead of a number for deeper configura
 
 - `port`: The port where the request will be bounced to. This property is **mandatory**
 - `allowHttps`: Tells the bouncer if HTTPS requests for this domain can be bounced. This property only applies when HTTPS is configured. Default is `false`
-- `forceHttps`: Tells the bouncer if the HTTP request should be redirected to HTTPS requests. This property only applies when HTTPS is configured. Defaults to `false`
-- `default`: If a request doesn't match with any host, bounce the request to the last host with this property set to true. If no host is set as default, the bouncer will reply with a 404 response. Default is `false`
+- `forceHttps`: Tells the bouncer if HTTP requests should be redirected to HTTPS requests. This property only applies when HTTPS is configured. Defaults to `false`
+- `default`: If a request doesn't match with any host, bounce the request to the last host with this property set to `true`. If no host is set as default, the bouncer will reply with a 404 response. Default is `false`
 
 You can add multiple hosts like so:
 ```json
