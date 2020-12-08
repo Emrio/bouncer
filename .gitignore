@@ -6,3 +6,5 @@ node_modules
 
 # config files
 config/*.json
+
+.todo
