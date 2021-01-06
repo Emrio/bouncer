@@ -1,6 +1,6 @@
 # Bouncer
 
-> A HTTP node.js server which distributes HTTP(S) requests to different sub-hosts
+> A nodeJS web proxy
 
 ## Table of content
 - [Installation](#installation)
