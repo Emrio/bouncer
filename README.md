@@ -9,6 +9,7 @@
   - [HTTP](#configuration-http)
   - [HTTPS](#configuration-https)
   - [404 Handler](#configuration-fof)
+- [Known issues](#known-issues)
 
 <a name="installation"></a>
 ## Installation
@@ -183,3 +184,8 @@ One of the following property should be set:
 By default, the bouncer will send the text `404: Unknown host`.
 
 **NOTE:** If you want a more powerful 404 handler, you should setup a default host.
+
+<a name="known-issues"></a>
+## Known issues
+
+The server does not currently support protocol upgrades (to websockets for instance)
