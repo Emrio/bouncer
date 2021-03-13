@@ -1,7 +1,7 @@
 {
   "name": "bouncer",
-  "version": "2.1.0",
-  "description": "Bounce HTTP(S) requests to sub-hosts",
+  "version": "2.2.0",
+  "description": "NodeJS proxy server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,7 +9,6 @@
   "author": "Emrio <emrio@emrio.fr>",
   "license": "MIT",
   "dependencies": {
-    "bouncy": "^3.2.2",
     "emrioutils": "^3.1.11"
   }
 }
